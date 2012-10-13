@@ -64,7 +64,7 @@ def transFa2code(text):
         except KeyError:
             pass
         ctext += c
-    return ctext.replace(u'aً', u'a2')
+    return ctext.replace(u'aً', u'a2').replace(u'oٔ', u'o2')
 
 def transCode2fa(ctext):
     ctext = toUnicode(ctext)
