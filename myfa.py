@@ -3,8 +3,8 @@
 
 import sys
 
-ZWNJ = '\xe2\x80\x8c'
-ZWJ = '\xe2\x80\x8d'
+ZWNJ = u'\u200c'
+ZWJ = u'\u200d'
 
 code_data = (
     (u'ا', 'a'),
