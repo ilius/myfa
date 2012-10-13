@@ -98,6 +98,10 @@ if __name__=='__main__':
     if sys.argv[1] == '-p':## print
         for fa, code in code_data:
             print '%s\t%s'%(toStr(fa), toStr(code))
+    elif sys.argv[1] == '-f':## file
+        print toStr(transFa2code(open(sys.argv[2]).read()))
+    elif sys.argv[1] == '-fd':## file
+        print toStr(transCode2fa(open(sys.argv[2]).read()))
     elif sys.argv[1] == '-d':## decode
         print toStr(transCode2fa(' '.join(sys.argv[2:])))
     else:
