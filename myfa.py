@@ -99,9 +99,9 @@ if __name__=='__main__':
         for fa, code in code_data:
             print '%s\t%s'%(toStr(fa), toStr(code))
     elif sys.argv[1] == '-d':## decode
-        print toStr(transCode2fa(sys.argv[2]))
+        print toStr(transCode2fa(' '.join(sys.argv[2:])))
     else:
-        print toStr(transFa2code(sys.argv[1]))
+        print toStr(transFa2code(' '.join(sys.argv[1:])))
 
 
 
