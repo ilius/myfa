@@ -10,7 +10,8 @@ ZWJ = u'\u200d'
 code_data = (
     (u'ا', 'a'),
     (u'آ', 'a1'),
-    (u'اً', 'a2'),
+    (u'أ', 'a2'),
+    (u'اً', 'a3'),
     (u'ب', 'c'),
     (u'پ', 'c3'),
     (u'ت', 'c1'),
@@ -69,7 +70,9 @@ def transFa2code(text):
         except KeyError:
             pass
         ctext += c
-    return ctext.replace(u'aً', u'a2').replace(u'oٔ', u'o2')
+    return ctext.replace(u'aٔ', 'a2')\
+                .replace(u'aً', u'a3')\
+                .replace(u'oٔ', u'o2')
 
 def transCode2fa(ctext):
     ctext = toUnicode(ctext)
