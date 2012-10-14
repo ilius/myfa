@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import string
 
 ZWNJ = u'\u200c'
 ZWJ = u'\u200d'
@@ -99,6 +100,16 @@ if __name__=='__main__':
     if sys.argv[1] == '-p':## print
         for fa, code in code_data:
             print '%s\t%s'%(toStr(fa), toStr(code))
+    if sys.argv[1] == '-s':## scan file
+        text = toUnicode(open(sys.argv[2]).read())
+        new = set()
+        for c in text:
+            if not c in string.printable:
+                if not c in fa2code:
+                    if not c in new:
+                        new.add(c)
+        for c in sorted(new):
+            print ord(c), toStr(c)
     elif sys.argv[1] == '-f':## file
         print toStr(transFa2code(open(sys.argv[2]).read()))
     elif sys.argv[1] == '-fd':## file
